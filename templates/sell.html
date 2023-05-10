@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="section">
+
+            <h1>COMPLETE DETAILS OF STOCK TO SELL</h1>
+            <form action="/sell" method="post" class="mb-3">
+                <select name="symbol">
+                    <option disabled selected value="">SYMBOL</option>
+                        {% for share in share_list %}
+                            <option value="{{ share }}">{{ share }}</option>
+                        {% endfor %}
+                </select>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="numbShares" name="shares" placeholder=" Number of Shares" type="text">
+                <button class="btn btn-primary" type="submit">Sell</button>
+            </form>
+        </div>
+    </div>
+            <div class="section" method="post">
+
+            <h1>Stock Sold Confirmation</h1>
+            <table class="table table-bordered"; class="table table-hover";>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Share Price</th>
+                        <th>Symbol</th>
+                        <th>Total Amount Sold</th>
+                        <th>Balance in Wallet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ price }}</td>
+                        <td>{{ symbol }}</td>
+                        <td>{{ amount }}</td>
+                        <td>{{ balance }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

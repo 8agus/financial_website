@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <div class="section" method="post">
+        <h1>TRANSACTION HISTORY</h1>
+        <table class="table table-bordered"; class="table table-hover";>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Share Name</th>
+                    <th>Share Symbol</th>
+                    <th>Number of Shares</th>
+                    <th>Buy or Sell</th>
+                    <th>Price in USD</th>
+                    <th>Total value in USD</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for trn in history %}
+                    <tr>
+                        <td>{{ trn.trn_date }}</td>
+                        <td>{{ trn.name }}</td>
+                        <td>{{ trn.symbol }}</td>
+                        <td>{{ trn.numb_shares }}</td>
+                        <td>{{ trn.buy_sell }}</td>
+                        <td>{{ trn.trn_price}}</td>
+                        <td>{{ trn.trn_value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

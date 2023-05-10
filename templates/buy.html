@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+        <div class="container">
+        <div class="section">
+
+            <h1>COMPLETE DETAILS OF STOCK TO BUY</h1>
+            <form action="/buy" method="post" class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="stockSymbol" name="symbol" placeholder="Stock Symbol" type="text">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="numbShares" name="shares" placeholder=" Number of Shares" type="text">
+                <button class="btn btn-primary" type="submit">Buy</button>
+            </form>
+        </div>
+
+        <div class="section" method="post">
+
+            <h1>Stock Purchase Confirmation</h1>
+            <table class="table table-bordered"; class="table table-hover";>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Share Price</th>
+                        <th>Symbol</th>
+                        <th>Total Purchase Amount</th>
+                        <th>Balance in Wallet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ price }}</td>
+                        <td>{{ symbol }}</td>
+                        <td>{{ amount }}</td>
+                        <td>{{ balance }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

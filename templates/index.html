@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <div action="/" class="section" method="post">
+        <h1>WELCOME BACK USER: {{ user_id }}</h1>
+        <h1>Your current Stock Holdings are:</h1>
+        <table class="table table-bordered"; class="table table-hover";>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Number of Shares</th>
+                    <th>Current Price in USD</th>
+                    <th>Total value in USD</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for share in shares %}
+                    <tr>
+                        <td>{{ share["name"] }}</td>
+                        <td>{{ share["symbol"] }}</td>
+                        <td>{{ share["number"] }}</td>
+                        <td>{{ share["live_price"] }}</td>
+                        <td>{{ share["total_per_share"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                <table class="table table-bordered"; class="table table-hover";>
+            <thead>
+                <tr>
+                    <th>Balance in Wallet</th>
+                    <th>Total amount in Wallet and Shares</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{ balance }}</td>
+                    <td>{{ cash_plus_shares }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+

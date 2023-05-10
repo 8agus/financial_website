@@ -1,0 +1,8 @@
+export API_KEY=pk_39798da4f0a4443ab346f0f0afac3a11
+
+To run programm past below into terminal: 
+API_KEY="pk_39798da4f0a4443ab346f0f0afac3a11" flask run
+
+New api code
+
+API_KEY="MFjkkZtuB5JqYXgqkm8y8wmnF0quOQO41va0lCKg" flask run
